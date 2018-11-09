@@ -18,7 +18,6 @@ preg_match_all("/\{(.*?)\}/s", $building_json[0], $matches);
 //Init buildings
 foreach($matches[0] as $match) {
   $building_json = json_decode($match);
-  var_dump($building_json);
   echo $building_json->name . "\n";
   $building = new Building($building_json, $db);
   $building->save();
